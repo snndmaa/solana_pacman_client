@@ -2,13 +2,17 @@ import axios from "axios";
 
 export default async function saveScore(score) {
   const data = {
-    userName: localStorage.getItem,
+    userName: localStorage.getItem('username'), // Ensure you provide the correct key
     score,
   };
+
   try {
-    const res = await axios.post('https://1311-34-207-135-7.ngrok-free.app/scores', data);
-    return `Success: ${res.data.message}`;
+    await axios.post('https://1311-34-207-135-7.ngrok-free.app/scores', data, {
+      withCredentials: true, // This is important if you are using cookies for authentication
+    });
+    console.log('Score saved!');
   } catch (err) {
-    return `Error: ${err.response.statusText}`;
+    console.error('Error saving score:', err); // Log the full error for better debugging
+    return `Error: ${err.response ? err.response.statusText : 'Network error'}`;
   }
 }

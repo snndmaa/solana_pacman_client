@@ -18,9 +18,11 @@ export default function Leaderboard({ variables }) {
 
   const fetchScores = async () => {
     try {
-      const res = await axios.get(scoresUrl);
+      const res = await axios.get(scoresUrl, {
+        withCredentials: true, // This is important if you are using cookies for authentication
+      });
       const scoresData = res.data;
-
+      console.log(scoresData);
       // Ensure there are at least 10 scores
       while (scoresData.length < 10) {
         scoresData.push({
@@ -37,8 +39,8 @@ export default function Leaderboard({ variables }) {
           .map(score => Number(score.score)) // Convert to number
           .filter(score => !isNaN(score))    // Filter out NaN values
       );
-
-      if (variables.score === maxScore) {
+      console.log(variables.score, maxScore)
+      if (variables.score > maxScore) {
         sendSolToWinner(variables);
       }
 
