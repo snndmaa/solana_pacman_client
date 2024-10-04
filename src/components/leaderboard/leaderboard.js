@@ -40,7 +40,7 @@ export default function Leaderboard({ variables }) {
           .filter(score => !isNaN(score))    // Filter out NaN values
       );
       console.log(variables.score, maxScore)
-      if (variables.score > maxScore) {
+      if (variables.score >= maxScore) {
         sendSolToWinner(variables);
       }
 
