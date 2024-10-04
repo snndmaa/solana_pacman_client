@@ -9,11 +9,11 @@ const profanity = new Profanity(options);
 
 const usersUrl = process.env.REACT_APP_URL
   ? `${process.env.REACT_APP_URL}/users`
-  : "http://ec2-34-207-135-7.compute-1.amazonaws.com:9000/users";
+  : "https://1311-34-207-135-7.ngrok-free.app/users";
 
 const sessionsUrl = process.env.REACT_APP_URL
   ? `${process.env.REACT_APP_URL}/sessions`
-  : "http://ec2-34-207-135-7.compute-1.amazonaws.com:9000/sessions";
+  : "https://1311-34-207-135-7.ngrok-free.app/sessions";
 
 const redirectUrl = process.env.REACT_APP_URL
   ? process.env.REACT_APP_URL

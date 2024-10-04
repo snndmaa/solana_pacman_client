@@ -9,7 +9,7 @@ import saveScore from "../game/mechanics/ghosts/collisions/pacmanDeath/gameOver/
 
 const scoresUrl = process.env.REACT_APP_URL
   ? `${process.env.REACT_APP_URL}/scores`
-  : "http://ec2-34-207-135-7.compute-1.amazonaws.com:9000/scores";
+  : "https://1311-34-207-135-7.ngrok-free.app/scores";
 
 export default function Leaderboard({ variables }) {
   const [scores, setScores] = useState([]);

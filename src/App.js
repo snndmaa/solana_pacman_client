@@ -13,7 +13,7 @@ window.Buffer = Buffer;
 
 const sessionsUrl = process.env.REACT_APP_URL
   ? `${process.env.REACT_APP_URL}/sessions`
-  : "http://ec2-34-207-135-7.compute-1.amazonaws.com:9000/sessions";
+  : "https://1311-34-207-135-7.ngrok-free.app/sessions";
 
 export default function App() {
   const [user, setUser] = useState();
