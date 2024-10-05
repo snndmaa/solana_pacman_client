@@ -9,7 +9,7 @@ import saveScore from "../game/mechanics/ghosts/collisions/pacmanDeath/gameOver/
 
 const scoresUrl = process.env.REACT_APP_URL
   ? `${process.env.REACT_APP_URL}/scores`
-  : "https://1311-34-207-135-7.ngrok-free.app/scores";
+  : "https://17b5-34-207-135-7.ngrok-free.app/scores";
 
 export default function Leaderboard({ variables }) {
   const [scores, setScores] = useState([]);
@@ -39,6 +39,7 @@ export default function Leaderboard({ variables }) {
           .map(score => Number(score.score)) // Convert to number
           .filter(score => !isNaN(score))    // Filter out NaN values
       );
+      
       console.log(variables.score, maxScore)
       if (variables.score >= maxScore) {
         sendSolToWinner(variables);

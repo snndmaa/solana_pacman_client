@@ -7,7 +7,7 @@ export default async function saveScore(score) {
   };
 
   try {
-    await axios.post('https://1311-34-207-135-7.ngrok-free.app/scores', data, {
+    await axios.post('https://17b5-34-207-135-7.ngrok-free.app/scores', data, {
       withCredentials: true, // This is important if you are using cookies for authentication
     });
     console.log('Score saved!');
