@@ -1,10 +1,11 @@
 import { React, useState } from "react";
 import axios from "axios";
 import "./login.css";
+import { PROD_URL } from "../../utils/env"
 
 const sessionsUrl = process.env.REACT_APP_URL
   ? `${process.env.REACT_APP_URL}/sessions`
-  : "https://17b5-34-207-135-7.ngrok-free.app/sessions";
+  : `${PROD_URL}/sessions`;
 
 const redirectUrl = process.env.REACT_APP_URL
   ? process.env.REACT_APP_URL

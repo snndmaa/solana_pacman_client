@@ -4,14 +4,13 @@ import axios from "axios";
 import "./main.css";
 import Game from "../game/game";
 import { Howl } from "howler";
-import { connectWallet } from "../../utils/web3/connectWallet"
+import { PROD_URL } from "../../utils/env"
 
 const logoutUrl = process.env.REACT_APP_URL
   ? `${process.env.REACT_APP_URL}/sessions`
-  : "https://17b5-34-207-135-7.ngrok-free.app/sessions";
+  : `${PROD_URL}/sessions`;
 
 export default function Main({ reactRoot, user }) {
-  const [ walletConnect, setWalletConnect ] = useState(false)
   const [theme] = useState(
     new Howl({
       src: ["./audio/title_theme.wav"],

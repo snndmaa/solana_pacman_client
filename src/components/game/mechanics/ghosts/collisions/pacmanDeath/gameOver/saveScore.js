@@ -1,4 +1,5 @@
 import axios from "axios";
+import { PROD_URL } from "../../../../../../../utils/env";
 
 export default async function saveScore(score) {
   const data = {
@@ -7,7 +8,7 @@ export default async function saveScore(score) {
   };
 
   try {
-    await axios.post('https://17b5-34-207-135-7.ngrok-free.app/scores', data, {
+    await axios.post(`${PROD_URL}/scores`, data, {
       withCredentials: true, // This is important if you are using cookies for authentication
     });
     console.log('Score saved!');

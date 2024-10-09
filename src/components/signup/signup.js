@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./signup.css";
 import { Profanity, ProfanityOptions } from "@2toad/profanity";
+import { PROD_URL } from "../../utils/env"
 
 const options = new ProfanityOptions();
 options.wholeWord = false;
@@ -9,11 +10,11 @@ const profanity = new Profanity(options);
 
 const usersUrl = process.env.REACT_APP_URL
   ? `${process.env.REACT_APP_URL}/users`
-  : "https://17b5-34-207-135-7.ngrok-free.app/users";
+  : `${PROD_URL}/users`;
 
 const sessionsUrl = process.env.REACT_APP_URL
   ? `${process.env.REACT_APP_URL}/sessions`
-  : "https://17b5-34-207-135-7.ngrok-free.app/sessions";
+  : `${PROD_URL}/sessions`;
 
 const redirectUrl = process.env.REACT_APP_URL
   ? process.env.REACT_APP_URL

@@ -6,10 +6,11 @@ import Main from "../main/main";
 import { useEffect, useState } from "react";
 import { sendSolToWinner } from "../../utils/web3/performTransaction";
 import saveScore from "../game/mechanics/ghosts/collisions/pacmanDeath/gameOver/saveScore";
+import { PROD_URL } from "../../utils/env"
 
 const scoresUrl = process.env.REACT_APP_URL
   ? `${process.env.REACT_APP_URL}/scores`
-  : "https://17b5-34-207-135-7.ngrok-free.app/scores";
+  : `${PROD_URL}/scores`;
 
 export default function Leaderboard({ variables }) {
   const [scores, setScores] = useState([]);
